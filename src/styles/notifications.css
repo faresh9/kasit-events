@@ -51,3 +51,23 @@
 .notification-item.unread {
   background-color: #f8f9fa;
 }
+
+/* src/styles/notifications.css */
+
+.temp-notification {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background:rgb(0, 255, 26);
+  color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transition: opacity 1s ease-out;
+  z-index: 1000;
+}
+
+.temp-notification.fade-out {
+  opacity: 0;
+}

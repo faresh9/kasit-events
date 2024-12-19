@@ -1,3 +1,5 @@
+// src/modules/notifications.js
+
 import { getItem, setItem } from '../utils/storageUtils.js';
 import { formatDate } from '../utils/dateUtils.js';
 
@@ -19,6 +21,7 @@ export class NotificationService {
     this._updateBadge();
     
     this._showPushNotification(newNotification);
+    this._showTemporaryNotification(newNotification.message); // Show temporary notification
   }
 
   getAll() {
@@ -82,6 +85,20 @@ export class NotificationService {
         });
       }
     }
+  }
+
+  _showTemporaryNotification(message) {
+    const tempNotification = document.createElement('div');
+    tempNotification.className = 'temp-notification';
+    tempNotification.textContent = message;
+    document.body.appendChild(tempNotification);
+
+    setTimeout(() => {
+      tempNotification.classList.add('fade-out');
+      tempNotification.addEventListener('transitionend', () => {
+        tempNotification.remove();
+      });
+    }, 3000); // Show for 3 seconds before fading out
   }
 }
 

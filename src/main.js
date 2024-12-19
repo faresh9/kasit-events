@@ -77,6 +77,10 @@ window.app = {
     try {
       await eventService.reserveSpot(eventId);
       initializeDashboard(); // Refresh the dashboard
+      notificationService.create({
+        type: 'INFO',
+        message: 'Spot reserved successfully!'
+      });
     } catch (error) {
       alert(error.message);
     }
@@ -98,4 +102,4 @@ window.app = {
 };
 
 // Initialize the application when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeApp);
+document.addEventListener('DOMContentLoaded', initializeApp); 
