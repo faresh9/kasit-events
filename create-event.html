@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Event</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1 class="text-2xl mb-1">Create New Event</h1>
+      <form id="createEventForm" class="mb-1">
+        <div class="form-group">
+          <label for="eventName">Event Name</label>
+          <input type="text" id="eventName" name="eventName" class="form-control" placeholder="Enter event name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="eventDate">Event Date</label>
+          <input type="datetime-local" id="eventDate" name="eventDate" class="form-control" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="eventDescription">Event Description</label>
+          <textarea id="eventDescription" name="eventDescription" class="form-control" rows="4" placeholder="Enter event description" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="eventCapacity">Event Capacity</label>
+          <input type="number" id="eventCapacity" name="eventCapacity" class="form-control" min="1" value="50">
+        </div>
+        
+        <div class="form-group">
+          <label for="eventImage">Event Image</label>
+          <input type="file" id="eventImage" name="eventImage" class="form-control" accept="image/*">
+        </div>
+        
+        <button type="submit" class="btn">Create Event</button>
+      </form>
+      
+      <button onclick="window.location.href='dashboard.html'" class="btn btn-secondary">Back to Dashboard</button>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Events</title>
+  <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card form-container">
+      <h1 class="text-center mb-1">University Events Login</h1>
+      <form id="authForm" class="mt-1">
+        <div class="form-group">
+          <label for="email">University Email</label>
+          <input type="email" id="email" class="form-control" placeholder="your.email@university.edu" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="form-control" required>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p id="errorMessage" class="error-message hidden mt-1"></p>
+      </form>
+    </div>
+  </div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
